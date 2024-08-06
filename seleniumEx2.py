@@ -50,11 +50,13 @@ for i in range(1, 11):
     titles={}
     titles[i] = driver.find_element(By.XPATH, '//*[@id="content"]/div/div[1]/table/tbody/tr['+str(i)+']/td[2]/a').get_property('innerText')
     print(titles)
-
+driver.find_element(By.XPATH, '//*[@id="modal-menu"]/div[1]/div[2]/div[2]/ul/li[1]/a').click()
 
 # 강사님 버전
 # 감염병 주요뉴스 클릭
 driver.find_element(By.XPATH, '//*[@id="tab_list"]/ul/li[1]/ul/li/div/a[1]').click()
+driver.implicitly_wait(20) 
+driver.find_element(By.CSS_SELECTOR, '#content > div > div.pagenation > a.next-page').click()
 
 
 # 뉴스 검색
